@@ -1,6 +1,6 @@
 from direct.showbase.ShowBase import ShowBase
 from panda3d.core import *
-import configparser
+import configparser 
 
 class Game(ShowBase):
     def __init__(self):
