@@ -38,6 +38,20 @@ class Game(ShowBase):
         self.accept('escape', self.quit)
         self.accept('1', self.loadLevel1)
         self.accept('2', self.loadLevel2)
+           # Load configuration settings from file
+self.config = ConfigParser()
+self.config.read('config.ini')
+
+# Load level data
+self.level1 = self.loader.loadModel(self.config.get('level1', 'model-file'))
+self.level2 = self.loader.loadModel(self.config.get('level2', 'model-file'))
+self.level1.setPos(self.config.getfloat('level1', 'start-pos-x'),
+                   self.config.getfloat('level1', 'start-pos-y'),
+                   self.config.getfloat('level1', 'start-pos-z'))
+self.level2.setPos(self.config.getfloat('level2', 'start-pos-x'),
+                   self.config.getfloat('level2', 'start-pos-y'),
+                   self.config.getfloat('level2', 'start-pos-z'))
+
         
     def quit(self):
         self.cleanup()
