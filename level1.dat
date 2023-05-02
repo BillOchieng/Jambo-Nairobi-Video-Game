@@ -1,1 +1,23 @@
+[level]
+name = "Safari Nairobi"
+background = "safari_nairobi.png"
 
+[characters]
+name = "Player"
+model = "player.obj"
+position = (0, 0, 0)
+
+[objects]
+name = "Tree"
+model = "tree.obj"
+position = (10, 0, 10)
+
+[enemies]
+name = "Lion"
+model = "lion.obj"
+position = (20, 0, 20)
+
+[triggers]
+name = "End Level Trigger"
+type = "end_level"
+position = (30, 0, 30)
